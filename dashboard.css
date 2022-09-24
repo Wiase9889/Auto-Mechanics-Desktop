@@ -1,0 +1,73 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-decoration: none;
+}
+
+.sidebar {
+  width: 20%;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 50px 30px;
+}
+
+.sidebar .logo {
+  width: 100%;
+  margin-bottom: 100px;
+}
+
+.logo h2 {
+  font-size: 30px;
+  color: white;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  /* gap: 30px; */
+  flex: 1;
+}
+
+nav a {
+  padding: 15px 0;
+  color: white;
+  font-size: 18px;
+}
+
+.theme_toggler {
+  width: 100%;
+}
+
+.theme_toggler button {
+  width: 100%;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 18px;
+  background-color: rgb(123, 122, 122);
+  cursor: pointer;
+}
+
+
+/* dark and light */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: rgb(29, 29, 29);
+    color: white;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background: #fff;
+    color: black;
+  }
+}

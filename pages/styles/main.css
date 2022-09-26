@@ -1,9 +1,16 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .sidebar {
@@ -33,14 +40,14 @@ nav {
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
-  /* gap: 30px; */
+  gap: 10px;
   flex: 1;
 }
 
 nav a {
   padding: 15px 0;
   color: white;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .theme_toggler {
@@ -56,12 +63,27 @@ nav a {
   cursor: pointer;
 }
 
-
 /* dark and light */
 @media (prefers-color-scheme: dark) {
   body {
-    background: rgb(29, 29, 29);
+    background-color: #323232;
     color: white;
+  }
+
+  .sidebar {
+    background-color: #202020ad;
+  }
+
+  .theme_toggler button {
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 18px;
+    background-color: #323232;
+    color: white;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
   }
 }
 
@@ -69,5 +91,22 @@ nav a {
   body {
     background: #fff;
     color: black;
+  }
+
+  .sidebar {
+    background-color: #323232;
+    color: black;
+  }
+
+  .theme_toggler button {
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 18px;
+    background-color: #fff;
+    color: black;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
   }
 }

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto Mechanics | Employees</title>
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="./employees.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <div class="logo">
+          <h2>Auto Mech</h2>
+        </div>
+
+        <nav>
+          <a href="../../pages/dashboard/dashboard.html">Dashboard</a>
+          <a href="../../pages/products/products.html">Products</a>
+          <a href="../../pages/customers/customers.html">Customers</a>
+          <a href="../../pages/employees/employees.html">Employees</a>
+          <a href="../../pages/suppliers/suppliers.html">Suppliers</a>
+        </nav>
+
+        <div class="theme_toggler">
+          <button type="button" id="toggle_dark">Dark</button>
+          <button type="button" id="toggle_system" hidden>
+            Reset to System
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Dashboard -->
+
+      <div class="employees">
+        <div class="heading">
+          <h2>Employees</h2>
+        </div>
+
+        <div class="addProd">
+          <button type="button" id="addProd">New Employee</button>
+        </div>
+        <!-- <button class="addCustomer">Add Customer</button> -->
+        <div class="table_wrapper">
+          <table class="table_users">
+            <tr>
+              <th>Id</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Contact</th>
+              <th>Email</th>
+              <!-- <th>Location</th> -->
+              <th>Role</th>
+              <th>Actions</th>
+            </tr>
+            <div class="table_lists">
+              <tr>
+                <td>001</td>
+                <td>Edna</td>
+                <td>Mensah</td>
+                <td>0201924571</td>
+                <td>edna0123@users.com</td>
+                <!-- <td>Adenta</td> -->
+                <td>Secretary</td>
+                <td>
+                  <button type="button" class="btn editBtn" id="editBtn">
+                    edit
+                  </button>
+                  <button type="button" class="btn deleteBtn" id="delBtn">
+                    del
+                  </button>
+                </td>
+              </tr>
+            </div>
+          </table>
+        </div>
+
+        <!-- Modal -->
+        <div class="addModal modal_wrapper" id="addProd_modal">
+          <div class="modal">
+            <div class="modal_header">
+              <h3>Add New Customer</h3>
+            </div>
+            <div class="modal_body">
+              <form autocomplete="off" id="addForm">
+                <div class="form_wrapper">
+                  <div class="form_group">
+                    <label for="customerId">Employee Id</label>
+                    <input
+                      type="text"
+                      name="customerId"
+                      id="customerId"
+                      placeholder="001"
+                      required
+                      disabled
+                    />
+                  </div>
+                  <div class="form_group">
+                    <label for="firstname">First Name</label>
+                    <input
+                      type="text"
+                      name="firstname"
+                      id="firstname"
+                      placeholder="John"
+                      required
+                    />
+                  </div>
+                  <div class="form_group">
+                    <label for="lastname">Last Name</label>
+                    <input
+                      type="text"
+                      name="lastname"
+                      id="lastname"
+                      placeholder="Doe"
+                      required
+                    />
+                  </div>
+                  <div class="form_group">
+                    <label for="contact">Contact</label>
+                    <input
+                      type="tel"
+                      name="contact"
+                      id="contact"
+                      placeholder="+(233) 1234 56789"
+                      required
+                      min="10"
+                    />
+                  </div>
+                  <div class="form_group">
+                    <label for="contact">Email</label>
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      placeholder="johndoe@example.com"
+                      required
+                    />
+                  </div>
+                  <div class="form_group">
+                    <label for="role">Role</label>
+                    <select name="role" id="role">
+                      <!-- <option value="choose an option" disabled selected>Choose a category</option> -->
+                      <option value="choose role" selected disabled>Choose role</option>
+                      <option value="admin">Admin</option>
+                      <option value="secretary">Secretary</option>
+                     </select>
+                  </div>
+                </div>
+                <div class="submit">
+                  <button type="submit" class="submitBtn">Add Customer</button>
+                  <button type="button" class="cancelBtn" id="cancelAddBtn">
+                    Cancel
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- UPDATE PRODUCT MODAL -->
+        <div class="updateModal modal_wrapper" id="updateProd_modal">
+          <div class="modal">
+            <div class="modal_header">
+              <h3>Update Employee</h3>
+            </div>
+            <div class="modal_body">
+              <form autocomplete="off" id="addForm">
+                <div class="form_wrapper">
+                  <div class="form_group">
+                    <label for="customerId">Employee Id</label>
+                    <input
+                      type="text"
+                      name="customerId"
+                      id="customerId"
+                      placeholder="001"
+                      required
+                      disabled
+                    />
+                  </div>
+                  <div class="form_group">
+                    <label for="firstname">First Name</label>
+                    <input
+                      type="text"
+                      name="firstname"
+                      id="firstname"
+                      placeholder="John"
+                      required
+                    />
+                  </div>
+                  <div class="form_group">
+                    <label for="lastname">Last Name</label>
+                    <input
+                      type="text"
+                      name="lastname"
+                      id="lastname"
+                      placeholder="Doe"
+                      required
+                    />
+                  </div>
+                  <div class="form_group">
+                    <label for="contact">Contact</label>
+                    <input
+                      type="tel"
+                      name="contact"
+                      id="contact"
+                      placeholder="+(233) 1234 56789"
+                      required
+                      min="10"
+                    />
+                  </div>
+                  <div class="form_group">
+                    <label for="contact">Email</label>
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      placeholder="johndoe@example.com"
+                      required
+                    />
+                  </div>
+                  <div class="form_group">
+                    <label for="role">Role</label>
+                    <select name="role" id="role">
+                      <!-- <option value="choose an option" disabled selected>Choose a category</option> -->
+                      <option value="choose role" selected disabled>Choose Role</option>
+                      <option value="admin">Admin</option>
+                      <option value="secretary">Secretary</option>
+                     </select>
+                  </div>
+                </div>
+                <div class="submit">
+                  <button type="submit" class="submitBtn">Update Employee</button>
+                  <button type="button" class="cancelBtn" id="cancelUpdateBtn">
+                    Cancel
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../../renderer.js"></script>
+  </body>
+</html>

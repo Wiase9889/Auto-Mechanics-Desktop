@@ -1,7 +1,6 @@
 const electron = require("electron");
 const path = require("path");
-// const { fs } = require("fs");
-const { app, BrowserWindow, ipcMain, nativeTheme, Menu, MenuItem } = electron;
+const { app, BrowserWindow, ipcMain, nativeTheme } = electron;
 
 const env = process.env.NODE_ENV || "development";
 
@@ -24,13 +23,13 @@ const createWindow = () => {
     height: 600,
     frame: true,
     titleBarOverlay: {
-      color: '#2f3241',
-      symbolColor: '#74b1be',
-      height: 60
+      color: "#2f3241",
+      symbolColor: "#74b1be",
+      height: 60,
     },
     webPreferences: {
       nodeIntegration: true,
-      preload: path.join(__dirname, "preload.js"),
+      preload: path.join(__dirname, "./preload.js"),
     },
   });
 
@@ -72,7 +71,6 @@ app.on("window-all-closed", () => {
 // In this file you can include the rest of the apps specific main process code
 // You can also put them in separate files and require them here...
 
-
 ipcMain.handle("dark-mode:toggle", () => {
   if (nativeTheme.shouldUseDarkColors) {
     nativeTheme.themeSource = "light";
@@ -85,24 +83,3 @@ ipcMain.handle("dark-mode:toggle", () => {
 ipcMain.handle("dark-mode:system", () => {
   nativeTheme.themeSource = "system";
 });
-
-// MENU
-// const menu = new Menu();
-
-// menu.append(
-//   new MenuItem({
-//     label: "Electron",
-//     submenu: [
-//       {
-//         role: "help",
-//         accelerator:
-//           process.platform === "darwin" ? "Alt + Cmd + I" : "Alt + Shift + I",
-//         click: () => {
-//           console.log("Electron rocks");
-//         },
-//       },
-//     ]
-//   })
-// );
-
-// Menu.setApplicationMenu(menu)

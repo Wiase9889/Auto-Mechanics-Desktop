@@ -1,0 +1,13 @@
+:root {
+/* DARK MODE */
+--sidebar-dark: #202020;
+--sidebar-dark-txt: #f1f1f1;
+--main-dark: #272727;
+--main-dark-txt: #ffffff;
+
+/* LIGHT MODE */
+--sidebar-light: #e1e1e1;
+--sidebar-light-txt: var(var(--sidebar-dark));
+--main-light: #fbfbfb;
+--main-light-txt: var(--sidebar-dark);
+}

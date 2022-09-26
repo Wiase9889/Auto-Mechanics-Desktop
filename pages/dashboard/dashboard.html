@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto Mechanics | Dashboard</title>
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="./dashboard.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <div class="logo">
+          <h2>Auto Mech</h2>
+        </div>
+
+        <nav>
+          <a href="./dashboard.html">Dashboard</a>
+          <a href="../products/products.html">Products</a>
+          <a href="../customers/customers.html">Customers</a>
+          <a href="../employees/employees.html">Employees</a>
+          <a href="../suppliers/suppliers.html">Suppliers</a>
+        </nav>
+
+        <div class="theme_toggler">
+          <button type="button" id="toggle_dark">Dark</button>
+          <button type="button" id="toggle_system" hidden>
+            Reset to System
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Dashboard -->
+
+      <div class="dashboard">
+        <!-- <div class="heading">
+          <h2>Dashboard</h2>
+        </div> -->
+
+        <!-- Cards -->
+        <div class="cards_container">
+          <div class="cards">
+            <h2>0</h2>
+            <p>Products</p>
+          </div>
+          <div class="cards">
+            <h2>0</h2>
+            <p>Customers</p>
+          </div>
+          <div class="cards">
+            <h2>0</h2>
+            <p>Suppliers</p>
+          </div>
+          <div class="cards">
+            <h2>0</h2>
+            <p>Employees</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../../renderer.js"></script>
+  </body>
+</html>

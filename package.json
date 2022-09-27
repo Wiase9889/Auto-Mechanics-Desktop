@@ -5,21 +5,30 @@
   "main": "main.js",
   "author": "Erasmus Mensah",
   "license": "MIT",
-  "scripts": {
-    "start": "electron .",
-    "build": "electron-builder"
-  },
   "build": {
     "appId": "Auto-Mechanics",
     "productName": "Auto Mechanics",
     "win": {
-      "target": ["nsis"]
+      "target": [
+        "nsis"
+      ]
     },
     "nsis": {
-      "alowToChangeInstallationDirectory": true,
-      "onrClick": false,
-      "uninstallDisplayName": "Auto Mechanics Uninstaller"
+      "allowToChangeInstallationDirectory": true,
+      "oneClick": false,
+      "uninstallDisplayName": "Auto Mechanics Uninstaller",
+      "createStartMenuShortcut": true,
+      "createDesktopShortcut": true,
+      "runAfterFinish": true,
+      "useZip": true,
+      "displayLanguageSelector": true
     }
+  },
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.66",

@@ -1,6 +1,9 @@
+let Localbase = require('localbase')
+
+const db = new Localbase('auto-mechanics')
+
 const darkmodeToggle = document.getElementById('toggle_dark')
 const toggleSystem = document.getElementById('toggle_system')
-// const loginBtn = document.getElementById('login')
 
 const addProd = document.getElementById('addProd')
 const addProdModal = document.getElementById('addProd_modal')
@@ -12,8 +15,6 @@ const cancelUpdateBtn = document.getElementById('cancelUpdateBtn')
 
 const addForm = document.getElementById('addForm')
 const updateForm = document.getElementById('updateForm')
-
-
 const theme = document.getElementById('theme_source');
 
 
@@ -28,7 +29,6 @@ toggleSystem.addEventListener('click', async () => {
   await window.darkMode.system()
   theme.innerHTML = 'System'
 })
-
 
 // ADD
 addProd.addEventListener('click', () => {
@@ -60,3 +60,41 @@ window.addEventListener('click', (e) => {
     updateProd_modal.classList.remove('show')
   }
 })
+
+
+
+/* ************************************************  DATABASE FUNCTIONS  ************************************************* */
+
+// ADD DOCUMENT TO DATABASE
+
+const createNewProduct = () => {
+  db.collection('products').add({
+    product_name: '',
+    product_price: '',
+    // product_
+  }).then(() => {
+    db.collection('products').get();
+  })
+}
+
+createNewProduct();
+
+// DELETE DOCUMENT FROM DATABASE
+
+// UPDATE DOCUMENT FROM DATABASE
+
+// GET ALL PRODUCTS FROM DATABASE
+
+// GET ALL CUSTOMERS FROM DATABSE
+
+// GET ALL SUPPLIERS FROM DATABASE
+
+// GET ALL EMPLOYEES FROM DATABASE
+
+// GET SPECIFIC EMPLOYEE FROM DATABASE
+ 
+// GET SPECIFIC PRODUCT FROM DATABASE
+
+// GET SPECIFIC SUPPLIER FROM DATABASE
+
+// GET SPECIFIC CUSTOMER FROM DATABASE

@@ -19,17 +19,23 @@ if (env === "development") {
 // Creating the window
 const createWindow = () => {
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1440,
+    height: 840,
+    simpleFullscreen: true,
     frame: true,
     titleBarOverlay: {
       color: "#2f3241",
       symbolColor: "#74b1be",
-      height: 60,
+      height: 80,
     },
+    // fullscreenable: true,
+    // autoHideMenuBar: true,
+    // roundedCorners: true,
+    // hasShadow: true,
     webPreferences: {
       nodeIntegration: true,
       preload: path.join(__dirname, "./preload.js"),
+      // devTools: false,
     },
   });
 

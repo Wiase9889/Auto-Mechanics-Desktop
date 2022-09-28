@@ -17,23 +17,25 @@
       </div>
     </div>
 
-    <!-- <script src="app.js"></script> -->
-    <script src="https://unpkg.com/localbase/dist/localbase.min.js"></script>
+    <!-- <script src="https://unpkg.com/localbase/dist/localbase.min.js"></script> -->
     <script src="./renderer.js"></script>
+    <script src="./.js"></script>
     <!-- <script src="./main.js"></script> -->
     <script>
-      const initialLaunch = false;
+      (() => {
+        const initialLaunch = false;
 
-      localStorage.setItem("initialLaunch", !initialLaunch);
-      const isInitialLaunch = localStorage.getItem("initialLaunch");
+        const isInitialLaunch = localStorage.getItem("initialLaunch");
 
-      if (isInitialLaunch) {
-        window.location.replace("./pages/dashboard/dashboard.html");
-      } else {
-        setTimeout(() => {
-          window.location.replace("./pages/auth/auth.html");
-        }, 4000);
-      }
+        if (isInitialLaunch === null) {
+          setTimeout(() => {
+            localStorage.setItem("initialLaunch", !initialLaunch);
+            window.location.replace("./pages/Home/home.html");
+          }, 6000);
+        } else {
+          window.location.replace("./pages/dashboard/dashboard.html");
+        }
+      })();
     </script>
   </body>
 </html>

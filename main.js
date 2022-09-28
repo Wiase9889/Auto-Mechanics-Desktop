@@ -37,6 +37,7 @@ const createWindow = () => {
       preload: path.join(__dirname, "./preload.js"),
       // devTools: false,
     },
+    autoHideMenuBar: true,
   });
 
   win.loadFile("index.html");

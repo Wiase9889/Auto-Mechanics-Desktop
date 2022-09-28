@@ -1,6 +1,6 @@
-let Localbase = require('localbase')
+// const Localbase = require('localbase')
 
-const db = new Localbase('auto-mechanics')
+// const db = new Localbase('auto-mechanics')
 
 const darkmodeToggle = document.getElementById('toggle_dark')
 const toggleSystem = document.getElementById('toggle_system')
@@ -47,6 +47,7 @@ editBtn.addEventListener('click', () => {
 
 cancelUpdateBtn.addEventListener('click', () => {
   updateProd_modal.classList.remove('show')
+  // updateForm.reset();
 })
 
 
@@ -67,17 +68,7 @@ window.addEventListener('click', (e) => {
 
 // ADD DOCUMENT TO DATABASE
 
-const createNewProduct = () => {
-  db.collection('products').add({
-    product_name: '',
-    product_price: '',
-    // product_
-  }).then(() => {
-    db.collection('products').get();
-  })
-}
-
-createNewProduct();
+const createNewProduct = () => {}
 
 // DELETE DOCUMENT FROM DATABASE
 

@@ -2,6 +2,9 @@ const electron = require("electron");
 const path = require("path");
 const { app, BrowserWindow, ipcMain, nativeTheme } = electron;
 
+// Auto Update App...
+require('update-electron-app')()
+
 const env = process.env.NODE_ENV || "development";
 
 // HOT RELOAD...

@@ -24,7 +24,12 @@ registerForm.addEventListener("submit", (event) => {
 
   const userCred = { username, password };
 
-  const users = JSON.parse(localStorage.getItem("userCred"));
+  // const users = JSON.parse(localStorage.getItem("userCred"));
+
+  // if (username === users.username || password === users.password) {
+  //   alert(`Sorry, user with username ${username || password} already exists`);
+  //   window.location.href = "../login/login.html";
+  // }
 
   // Checking all user input values...
   if (!username) {
@@ -35,15 +40,13 @@ registerForm.addEventListener("submit", (event) => {
     alert("Please confirm your password");
   } else if (confirmpassword !== password) {
     alert("Passwords do not match");
+    return;
   } else if (!password.match(numbers)) {
     alert("Please add at least one number");
   } else if (!password.match(lowerCase)) {
     alert("Please add a lowercase letter");
   } else if (!password.match(upperCase)) {
     alert("Please add an uppercase letter");
-  } else if (username === users.username || password === users.password) {
-    alert(`Sorry, user with username ${username || password} already exists`);
-    window.location.href = "../login/login.html";
   } else {
     // Saving our user's input into the LocalStorage as a local database...
     alert("Registration Successful");

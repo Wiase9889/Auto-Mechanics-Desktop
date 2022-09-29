@@ -74,9 +74,27 @@
 
 /* dark and light */
 @media (prefers-color-scheme: dark) {
-  body {
+  body, .link__wrapper, .link__wrapper a {
     background: rgb(29, 29, 29);
     color: white;
+  }
+
+  .link__wrapper a {
+    box-shadow: 0 5px 15px rgba(34, 34, 34, 0.774);
+    background-color: #454545b3;
+  }
+
+  .link__wrapper a:hover {
+    box-shadow: none;
+  }
+
+  .home {
+    filter: invert();
+  }
+
+  .form__group input {
+    color: whitesmoke;
+    border: 2px solid rgb(77, 77, 77);
   }
 }
 
